@@ -5,3 +5,7 @@ jupyter_core
 pandas
 numpy
 matplotlib
+python-multipart
+openpyxl
+# 新增以下依赖
+httpx
