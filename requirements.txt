@@ -1,7 +1,6 @@
 fastapi
 uvicorn
-jupyter_client
-jupyter_core
+docker
 pandas
 numpy
 matplotlib
