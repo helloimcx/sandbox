@@ -20,6 +20,8 @@ RUN groupadd -r sandbox && useradd -r -g sandbox sandbox
 
 # 创建工作目录
 RUN mkdir -p /sandbox && chown sandbox:sandbox /sandbox
+# 新增：创建 /data 目录并赋予 sandbox 用户权限
+RUN mkdir -p /data && chown sandbox:sandbox /data
 WORKDIR /sandbox
 
 # 安装常用的Python包
