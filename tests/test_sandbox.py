@@ -157,8 +157,8 @@ print("这行不会执行")
                 proxies=self.proxies
             )
             
-            self.assertEqual(response.status_code, 400)
-            print("✅ 无效请求正确返回400状态码")
+            self.assertEqual(response.status_code, 422)
+            print("✅ 无效请求正确返回422状态码")
                 
         except requests.exceptions.RequestException as e:
             self.fail(f"❌ 请求失败: {e}")

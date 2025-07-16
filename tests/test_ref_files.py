@@ -17,23 +17,19 @@ def test_ref_files():
         "code": """
 # 读取引用文件并处理
 import os
-print("当前工作目录:", os.getcwd())
-print("根目录内容:", os.listdir('/'))
-print("/data目录是否存在:", os.path.exists('/data'))
-if os.path.exists('/data'):
-    print("/data目录内容:", os.listdir('/data'))
-else:
-    print("/data目录不存在")
 
-# 尝试读取引用文件
-try:
+# 检查引用文件是否存在
+if os.path.exists('/data/test.txt'):
     with open('/data/test.txt', 'r') as f:
         content = f.read()
-        print("文件内容:", content[:100] + "..." if len(content) > 100 else content)
-except FileNotFoundError:
-    print("文件未找到")
-except Exception as e:
-    print("读取文件时出错:", e)
+        print(f"成功读取引用文件，内容: {content.strip()}")
+else:
+    print("引用文件不存在")
+    
+# 列出可用的文件
+if os.path.exists('/data'):
+    files = os.listdir('/data')
+    print(f"可用文件: {files}")
 """,
         "timeout": 30,
         "work_dir": "/data",

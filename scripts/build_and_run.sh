@@ -1,6 +1,7 @@
 #!/bin/bash
 
 # 构建和运行沙盒系统脚本
+docker stop sandbox-api
 
 set -e
 
@@ -32,6 +33,7 @@ docker run -d \
     -v /var/run/docker.sock:/var/run/docker.sock \
     --rm \
     sandbox-api
+
 
 echo "✅ 沙盒API服务已启动在 http://localhost:16009"
 echo "📋 服务日志: docker logs -f sandbox-api"
